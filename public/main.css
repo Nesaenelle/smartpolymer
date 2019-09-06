@@ -602,7 +602,8 @@ main {
   .form .input {
     overflow: hidden;
     width: 100%;
-    margin-bottom: 25px; }
+    margin-bottom: 25px;
+    position: relative; }
     .form .input input {
       border: solid 1px #dadada;
       border-radius: 4px;
@@ -612,15 +613,29 @@ main {
       width: 100%; }
       .form .input input.success {
         border: solid 1px #44a45f; }
+        .form .input input.success ~ .input__icon {
+          background: url(../img/check.svg);
+          width: 16px; }
       .form .input input.error {
         border: solid 1px #e6173e; }
         .form .input input.error + .error-text {
           display: block; }
+        .form .input input.error ~ .input__icon {
+          background: url(../img/Close.svg);
+          width: 14px; }
+    .form .input__icon {
+      position: absolute;
+      right: 10px;
+      top: 24px;
+      height: 14px; }
     .form .input .error-text {
       display: none;
       font-size: 16px;
       line-height: 1.5;
       color: #e6173e; }
+      .form .input .error-text img {
+        width: 15px;
+        margin-right: 5px; }
   .form .textarea textarea {
     border: solid 1px #dadada;
     border-radius: 4px;
@@ -687,6 +702,19 @@ main {
   @media (max-width: 480px) {
     #map {
       height: 100vh; } }
+  #map .gm-style .gm-style-iw-c {
+    padding: 0; }
+  #map .gm-style .gm-style-iw-t::after {
+    background: #ff6429; }
+  #map .gm-style-iw-d {
+    overflow: auto !important; }
+  #map .marker-content {
+    background: #ff6429;
+    width: 100%;
+    color: #fff;
+    padding: 13px 20px;
+    font-size: 16px;
+    line-height: 1.4em; }
 
 footer {
   height: 344px;
@@ -705,6 +733,8 @@ footer {
         margin: auto; } }
   footer .copyright {
     color: #fff; }
+  footer .socials a {
+    margin-left: 30px; }
   footer .container {
     width: 100%; }
     footer .container > div {

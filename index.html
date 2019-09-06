@@ -177,12 +177,14 @@
                         <label for="">Ваше Имя</label>
                         <div class="input">
                             <input type="text" required>
-                            <div class="error-text">Oopsie! That name is a little on the wrong side</div>
+                            <div class="error-text"><img src="img/Warning.svg" alt="">Oopsie! That name is a little on the wrong side</div>
+                            <div class="input__icon"></div>
                         </div>
                         <label for="">Ваш Email</label>
                         <div class="input">
                             <input type="email" required>
-                            <div class="error-text">Oopsie! That email is a little on the wrong side</div>
+                            <div class="error-text"><img src="img/Warning.svg" alt="">Oopsie! That email is a little on the wrong side</div>
+                            <div class="input__icon"></div>
                         </div>
                         <label for="">Напишите нам</label>
                         <div class="textarea">
@@ -220,6 +222,10 @@
         <div class="container">
             <div>
                 <a href="#1" class="logo"><img src="img/logo_sp.png" alt=""></a>
+                <div class="socials">
+                    <a href=""><img src="img/Facebook.svg" alt=""></a>
+                    <a href=""><img src="img/Instagram.svg" alt=""></a>
+                </div>
             </div>
             <div>
                 <div class="copyright">SmartPolymer © 2019. All Rights Reserved.</div>
@@ -236,27 +242,34 @@
 
         function initMap() {
             map = new google.maps.Map(document.getElementById('map'), {
-                center: { lat: 50.4202, lng: 30.4725 },
+                center: { lat: 50.4689313, lng: 30.4682068 },
                 zoom: 17,
                 disableDefaultUI: true,
                 scaleControl: false,
                 navigationControl: false,
                 draggable: false
             });
+            var contentString = '<div class="marker-content">Киев, <br>ул. Юрия Ильенко 81 А</div>';
+            var infowindow = new google.maps.InfoWindow({
+                   content: contentString
+                 });
+            var icon = {
+                url: "img/marker.svg", // url
+                scaledSize: new google.maps.Size(64, 64), // scaled size
+                origin: new google.maps.Point(0, 0), // origin
+                anchor: new google.maps.Point(20, 75) // anchor
+            };
 
-            // var icon = {
-            //     url: "img/marker.svg", // url
-            //     scaledSize: new google.maps.Size(36, 36), // scaled size
-            //     origin: new google.maps.Point(0, 0), // origin
-            //     anchor: new google.maps.Point(15, 35) // anchor
-            // };
+            var marker = new google.maps.Marker({
+                position: { lat: 50.4689313, lng: 30.4682068 },
+                map: map,
+                title: 'Hello World!',
+                icon: icon
+            });
 
-            // var marker = new google.maps.Marker({
-            //     position: { lat: 50.4202, lng: 30.4725 },
-            //     map: map,
-            //     title: 'Hello World!',
-            //     icon: icon
-            // });
+            marker.addListener('click', function() {
+                 infowindow.open(map, marker);
+               });
         }
 
 

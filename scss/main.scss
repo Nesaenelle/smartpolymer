@@ -559,6 +559,7 @@ main {
         overflow: hidden;
         width: 100%;
         margin-bottom: 25px;
+        position: relative;
 
         input {
             border: solid 1px #dadada;
@@ -571,6 +572,10 @@ main {
 
             &.success {
                 border: solid 1px #44a45f;
+                & ~ .input__icon {
+                  background: url(../img/check.svg);
+                  width: 16px;
+                }
             }
 
             &.error {
@@ -579,7 +584,21 @@ main {
                 &+.error-text {
                     display: block;
                 }
+
+                & ~ .input__icon {
+                  background: url(../img/Close.svg);
+                  width: 14px;
+                }
             }
+        }
+
+        &__icon {
+          position: absolute;
+          right: 10px;
+          top: 24px;
+          // bottom: 0;
+          height: 14px;
+          // margin: auto;
         }
 
         .error-text {
@@ -587,6 +606,10 @@ main {
             font-size: 16px;
             line-height: 1.5;
             color: #e6173e;
+            img {
+              width: 15px;
+              margin-right: 5px;
+            }
         }
     }
 
@@ -683,6 +706,25 @@ main {
     @media (max-width: 480px) {
         height: 100vh;
     }
+
+    .gm-style .gm-style-iw-c {
+      padding: 0;
+    }
+    .gm-style .gm-style-iw-t::after {
+      background: #ff6429;
+    }
+    .gm-style-iw-d {
+      overflow: auto!important;
+    }
+    .marker-content {
+      background: #ff6429;
+      // position: absolute;
+      width: 100%;
+      color: #fff;
+      padding: 13px 20px;
+      font-size: 16px;
+      line-height: 1.4em;
+    }
 }
 
 footer {
@@ -708,6 +750,12 @@ footer {
 
     .copyright {
         color: #fff;
+    }
+
+    .socials {
+      a {
+        margin-left: 30px;
+      }
     }
 
     .container {

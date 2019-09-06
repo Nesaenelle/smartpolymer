@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="28px" viewBox="0 0 14 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.3 (81716) - https://sketch.com -->
+    <title>Icon/Social/Facebook</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M18.4283773,29.3333333 L18.4283773,17.3333333 L22.0715907,17.3333333 L22.6666667,12 L18.4283733,12 L18.4283733,9.40266667 C18.4283733,8.02933333 18.4634547,6.66666667 20.3825067,6.66666667 L22.3262533,6.66666667 L22.3262533,2.85333333 C22.3262533,2.796 20.6566667,2.66666667 18.9675867,2.66666667 C15.4400133,2.66666667 13.2312133,4.876 13.2312133,8.93333333 L13.2312133,12 L9.33333333,12 L9.33333333,17.3333333 L13.2312133,17.3333333 L13.2312133,29.3333333 L18.4283733,29.3333333 L18.4283773,29.3333333 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Smartpolymer--Desktop_LP" transform="translate(-1485.000000, -9724.000000)">
+            <g id="Footer" transform="translate(0.000000, 9602.000000)">
+                <g id="Logo-+-Copyright" transform="translate(430.000000, 120.000000)">
+                    <g id="Social-Icons-+-Newsletter-Button" transform="translate(811.000000, 0.000000)">
+                        <g id="Social-Icons" transform="translate(235.000000, 0.000000)">
+                            <g id="Icon/Social/Facebook">
+                                <rect id="24pt-Bounding-Box" x="0" y="0" width="32" height="32"></rect>
+                                <mask id="mask-2" fill="white">
+                                    <use xlink:href="#path-1"></use>
+                                </mask>
+                                <g id="Facebook"></g>
+                                <g id="Color/White" mask="url(#mask-2)" fill="#FFFFFF" fill-rule="evenodd">
+                                    <rect id="Base" x="0" y="0" width="32" height="32"></rect>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
