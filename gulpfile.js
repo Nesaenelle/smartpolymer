@@ -35,7 +35,7 @@ function watch() {
             baseDir: "./"
         }
     });
-    gulp.watch('scss/main.scss', style);
+    gulp.watch('scss/**/*', style);
     
     gulp.watch('index.html', reload);
 }
