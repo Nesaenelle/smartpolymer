@@ -85,8 +85,9 @@ function resetValidaty(el) {
 
 
 $('.go-btn-down').on('click', function() {
-    var body = $("html, body");
-    body.stop().animate({ scrollTop: window.innerHeight }, 500);
+    // var body = $("html, body");
+    $('header a[href="#products"]').click();
+    // body.stop().animate({ scrollTop: window.innerHeight + $('header').height() }, 500);
 });
 
 $('.go-btn-back').on('click', function() {
