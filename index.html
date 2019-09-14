@@ -11,14 +11,15 @@
 </head>
 
 <body>
+    <div data-navigation="home"></div>
     <header>
-        <a href="#1" class="logo"><img src="img/logo_sp.png" alt=""></a>
+        <a href="#home" class="logo"><img src="img/logo_sp.png" alt=""></a>
         <nav>
             <ul>
-                <li><a href="#2">Продукция</a></li>
-                <li><a href="#3" class="active">О компании</a></li>
-                <li><a href="#4">Партнеры</a></li>
-                <li><a href="#5">Контакты</a></li>
+                <li><a href="#products">Продукция</a></li>
+                <li><a href="#about">О компании</a></li>
+                <li><a href="#partners">Партнеры</a></li>
+                <li><a href="#contacts">Контакты</a></li>
             </ul>
         </nav>
     
@@ -28,10 +29,10 @@
         <div class="dropdown-menu" data-menu>
             <nav>
                 <ul>
-                    <li><a href="#2">Продукция</a></li>
-                    <li><a href="#3" class="active">О компании</a></li>
-                    <li><a href="#4">Партнеры</a></li>
-                    <li><a href="#5">Контакты</a></li>
+                    <li><a href="#products">Продукция</a></li>
+                    <li><a href="#about">О компании</a></li>
+                    <li><a href="#partners">Партнеры</a></li>
+                    <li><a href="#contacts">Контакты</a></li>
                 </ul>
             </nav>
             <button class="btn btn--orange">вернуться на сайт</button>
@@ -47,26 +48,26 @@
                 </div>
 
                 <div>                
-                    <button class="btn btn--orange">ОЗНАКОМИТЬCЯ С ПРОДУКЦИЕЙ</button>
-                    <button class="btn btn--transparent">СВЯЗАТЬСЯ С НАМИ</button>
+                    <a href="#products"><button class="btn btn--orange">ОЗНАКОМИТЬCЯ С ПРОДУКЦИЕЙ</button></a>
+                    <a href="#contacts"><button class="btn btn--transparent">СВЯЗАТЬСЯ С НАМИ</button></a>
                 </div>
 
                 <div class="go-btn"></div>
             </div>
         </section>
-        <section class="production">
+        <section class="production" data-navigation="products">
             <div class="container">
                 <div class="title">Продукция реализуемая нашей компанией</div>
                 <div class="text">
                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
-                    <br>
+           
                     <p>Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis. Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.</p>
-                    <br>
+               
                     <p>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor.</p>
                 </div>
                 <div class="product-list">
                     <div class="product-list__item">
-                        <img src="img/EPS-min.jpg" alt="">
+                        <figure><img src="img/EPS-min.jpg" alt=""></figure>
                         <div class="product-list__item__title">EPS</div>
                         <div class="product-list__item__name">Вспененный полистирол</div>
                         <div class="product-list__item__small-name">Expandable Polystyrene</div>
@@ -75,7 +76,7 @@
                         </div>
                     </div>
                     <div class="product-list__item">
-                        <img src="img/HIPS-min.jpg" alt="">
+                        <figure><img src="img/HIPS-min.jpg" alt=""></figure>
                         <div class="product-list__item__title">HIPS</div>
                         <div class="product-list__item__name">Ударопрочный полистирол</div>
                         <div class="product-list__item__small-name">High Impact PolyStyrene</div>
@@ -84,7 +85,7 @@
                         </div>
                     </div>
                     <div class="product-list__item">
-                        <img src="img/GPPS-min.jpg" alt="">
+                        <figure><img src="img/GPPS-min.jpg" alt=""></figure>
                         <div class="product-list__item__title">GPPS</div>
                         <div class="product-list__item__name">Полистирол общего назначения</div>
                         <div class="product-list__item__small-name">General Purpose Polystyrene</div>
@@ -93,7 +94,7 @@
                         </div>
                     </div>
                     <div class="product-list__item">
-                        <img src="img/PP-min.jpg" alt="">
+                        <figure><img src="img/PP-min.jpg" alt=""></figure>
                         <div class="product-list__item__title">PP</div>
                         <div class="product-list__item__name">Термопластичный полимер пропилена</div>
                         <div class="product-list__item__small-name">Polypropylene</div>
@@ -102,7 +103,7 @@
                         </div>
                     </div>
                     <div class="product-list__item">
-                        <img src="img/LLDPE-min.jpg" alt="">
+                        <figure><img src="img/LLDPE-min.jpg" alt=""></figure>
                         <div class="product-list__item__title">LLDPE</div>
                         <div class="product-list__item__name">Линейный полиэтилен высокого давления</div>
                         <div class="product-list__item__small-name">Linear low-density polyethylene</div>
@@ -111,7 +112,7 @@
                         </div>
                     </div>
                     <div class="product-list__item">
-                        <img src="img/HDPE-min.jpg" alt="">
+                        <figure><img src="img/HDPE-min.jpg" alt=""></figure>
                         <div class="product-list__item__title">HDPE</div>
                         <div class="product-list__item__name">Полиэтилен низкого давления</div>
                         <div class="product-list__item__small-name">High-density polyethylene или PEHD</div>
@@ -120,7 +121,7 @@
                         </div>
                     </div>
                     <div class="product-list__item">
-                        <img src="img/LDPE-min.jpg" alt="">
+                        <figure><img src="img/LDPE-min.jpg" alt=""></figure>
                         <div class="product-list__item__title">LDPE</div>
                         <div class="product-list__item__name">Полиэтилен высокого давления</div>
                         <div class="product-list__item__small-name">Low density polyethylene</div>
@@ -133,7 +134,7 @@
         </section>
         <section class="background-1">
         </section>
-        <section class="successful-partners">
+        <section class="successful-partners" data-navigation="about">
             <div class="container">
                 <div class="title">Успешные деловые партнеры</div>
                 <div class="text">
@@ -146,29 +147,29 @@
         </section>
         <section class="background-2">
         </section>
-        <section>
+        <section data-navigation="partners">
             <div class="container">
                 <div class="countries-container">                
                     <div class="title">Поставки со всего мира</div>
                     <div class="text">Наша компания всегда стремится предоставить своим клиентам только лучшие материалы и широкий ассортимент продукции. Именно поэтому мы работаем с лучшими поставщиками полимерного сырья со всего мира:</div>
                     <div class="countries">
-                        <div class="countries__item"><img src="img/az.svg" alt=""><span>Азербайджан</span></div>
-                        <div class="countries__item"><img src="img/by.svg" alt=""><span>Беларусь</span></div>
-                        <div class="countries__item"><img src="img/hungary.svg" alt=""><span>Венгрия</span></div>
-                        <div class="countries__item"><img src="img/georgia.svg" alt=""><span>Грузия</span></div>
-                        <div class="countries__item"><img src="img/iran.svg" alt=""><span>Иран</span></div>
-                        <div class="countries__item"><img src="img/italy.svg" alt=""><span>Италия</span></div>
-                        <div class="countries__item"><img src="img/qatar.svg" alt=""><span>Катар</span></div>
-                        <div class="countries__item"><img src="img/china.svg" alt=""><span>Китай</span></div>
-                        <div class="countries__item"><img src="img/poland.svg" alt=""><span>Польша</span></div>
-                        <div class="countries__item"><img src="img/russia.svg" alt=""><span>Россия</span></div>
-                        <div class="countries__item"><img src="img/saudiarabia.svg" alt=""><span>Саудовская Аравия</span></div>
-                        <div class="countries__item"><img src="img/taiwan.svg" alt=""><span>Тайвань</span></div>
-                        <div class="countries__item"><img src="img/turkmenistan.svg" alt=""><span>Туркменистан</span></div>
-                        <div class="countries__item"><img src="img/turkey.svg" alt=""><span>Турция</span></div>
-                        <div class="countries__item"><img src="img/uzbekistan.svg" alt=""><span>Узбекистан</span></div>
-                        <div class="countries__item"><img src="img/france.svg" alt=""><span>Франция</span></div>
-                        <div class="countries__item"><img src="img/southkorea.svg" alt=""><span>Южная Корея</span></div>
+                        <div class="countries__item"><figure><img src="img/az.svg" alt=""></figure><span>Азербайджан</span></div>
+                        <div class="countries__item"><figure><img src="img/by.svg" alt=""></figure><span>Беларусь</span></div>
+                        <div class="countries__item"><figure><img src="img/hungary.svg" alt=""></figure><span>Венгрия</span></div>
+                        <div class="countries__item"><figure><img src="img/georgia.svg" alt=""></figure><span>Грузия</span></div>
+                        <div class="countries__item"><figure><img src="img/iran.svg" alt=""></figure><span>Иран</span></div>
+                        <div class="countries__item"><figure><img src="img/italy.svg" alt=""></figure><span>Италия</span></div>
+                        <div class="countries__item"><figure><img src="img/qatar.svg" alt=""></figure><span>Катар</span></div>
+                        <div class="countries__item"><figure><img src="img/china.svg" alt=""></figure><span>Китай</span></div>
+                        <div class="countries__item"><figure><img src="img/poland.svg" alt=""></figure><span>Польша</span></div>
+                        <div class="countries__item"><figure><img src="img/russia.svg" alt=""></figure><span>Россия</span></div>
+                        <div class="countries__item"><figure><img src="img/saudiarabia.svg" alt=""></figure><span>Саудовская Аравия</span></div>
+                        <div class="countries__item"><figure><img src="img/taiwan.svg" alt=""></figure><span>Тайвань</span></div>
+                        <div class="countries__item"><figure><img src="img/turkmenistan.svg" alt=""></figure><span>Туркменистан</span></div>
+                        <div class="countries__item"><figure><img src="img/turkey.svg" alt=""></figure><span>Турция</span></div>
+                        <div class="countries__item"><figure><img src="img/uzbekistan.svg" alt=""></figure><span>Узбекистан</span></div>
+                        <div class="countries__item"><figure><img src="img/france.svg" alt=""></figure><span>Франция</span></div>
+                        <div class="countries__item"><figure><img src="img/southkorea.svg" alt=""></figure><span>Южная Корея</span></div>
                     </div>
                 </div>
                 <div class="form">
@@ -176,42 +177,41 @@
                     <form novalidate>
                         <label for="">Ваше Имя</label>
                         <div class="input">
-                            <input type="text" required>
+                            <input type="text" required maxlength="40">
                             <div class="error-text"><img src="img/Warning.svg" alt="">Oopsie! That name is a little on the wrong side</div>
                             <div class="input__icon"></div>
                         </div>
                         <label for="">Ваш Email</label>
                         <div class="input">
-                            <input type="email" required>
+                            <input type="email" required maxlength="40">
                             <div class="error-text"><img src="img/Warning.svg" alt="">Oopsie! That email is a little on the wrong side</div>
                             <div class="input__icon"></div>
                         </div>
                         <label for="">Напишите нам</label>
                         <div class="textarea">
-                            <textarea></textarea>
+                            <textarea maxlength="1000"></textarea>
                         </div>
                         <button class="btn btn--orange">ОТПРАВИТЬ</button>
                     </form>
                 </div>
-                <div class="contacts">
+                <div class="contacts" data-navigation="contacts">
                     <ul>
                         <li>Офис</li>
-                        <li>Киев</li>
-                        <li>ул. Юрия Ильенко 81 А</li>
+                        <li><a href="https://goo.gl/maps/VF5SxXmNe9BzkQip7" target="_blank">Киев <br> ул. Юрия Ильенко 81 А</a></li>
                     </ul>
                     <ul>
                         <li>Телефоны</li>
-                        <li>+380 67 466 97 17</li>
-                        <li>+380 44 465 63 66</li>
+                        <li><a href="tel:380674669717">+380 67 466 97 17</a></li>
+                        <li><a href="tel:380444656366">+380 44 465 63 66</a></li>
                     </ul>
                     <ul>
                         <li>Email</li>
-                        <li>info@smartpolymer.com.ua</li>
+                        <li><a href="mailto:info@smartpolymer.com.ua">info@smartpolymer.com.ua</a></li>
                     </ul>
                     <ul>
                         <li>Social</li>
-                        <li>#smartpolymer</li>
-                        <li>@smartpolymer</li>
+                        <li><a href="" target="_blank">#smartpolymer</a></li>
+                        <li><a href="" target="_blank">@smartpolymer</a></li>
                     </ul>
                 </div>
             </div>
@@ -221,10 +221,10 @@
     <footer>
         <div class="container">
             <div>
-                <a href="#1" class="logo"><img src="img/logo_sp.png" alt=""></a>
+                <a href="#home"  class="logo"><img src="img/logo_sp.png" alt=""></a>
                 <div class="socials">
-                    <a href=""><img src="img/Facebook.svg" alt=""></a>
-                    <a href=""><img src="img/Instagram.svg" alt=""></a>
+                    <a href="" target="_blank"><img src="img/Facebook.svg" alt=""></a>
+                    <a href="" target="_blank"><img src="img/Instagram.svg" alt=""></a>
                 </div>
             </div>
             <div>
@@ -255,9 +255,9 @@
                  });
             var icon = {
                 url: "img/marker.svg", // url
-                scaledSize: new google.maps.Size(64, 64), // scaled size
+                scaledSize: new google.maps.Size(72, 72), // scaled size
                 origin: new google.maps.Point(0, 0), // origin
-                anchor: new google.maps.Point(20, 75) // anchor
+                anchor: new google.maps.Point(24, 75) // anchor
             };
 
             var marker = new google.maps.Marker({

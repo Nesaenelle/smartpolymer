@@ -84,6 +84,53 @@ $('.go-btn').on('click', function() {
     body.stop().animate({ scrollTop: window.innerHeight }, 500);
 });
 
+var tabs = $('[data-navigation]');
+var links = $('header a[href]');
+
+window.addEventListener('scroll', () => {
+    tabs.each((i, elem) => {
+        if (isScrolledIntoView(elem, 110)) {
+            var id = elem.getAttribute('data-navigation');
+            links.each((i, link) => {
+                if (link.getAttribute('href').substr(1) === id) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        }
+    });
+}, false);
+
+
+function isScrolledIntoView(elem, offsetVal = 0) {
+  var docViewTop = window.pageYOffset;
+  var docViewBottom = docViewTop + window.innerHeight;
+  var elemTop = offset(elem).top;
+  var elemBottom = elemTop + elem.clientHeight;
+  return docViewTop >= elemTop - (offsetVal) /*- window.innerHeight*/ ; // /((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+}
+
+function offset(el) {
+    var rect = el.getBoundingClientRect(),
+      scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+      scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    return {
+      top: rect.top + scrollTop,
+      left: rect.left + scrollLeft
+    }
+  }
+
+
+$('a[href*="#"]').on('click', function(e) {
+    e.preventDefault();
+    var id = $(this).attr('href');
+    // debugger
+
+    $('[data-navigation="'+id.substr(1)+'"]')[0].scrollIntoView({behavior: "smooth"});
+});
+
+
 
 // ; (function () {
 //     var elements = $('[data-animate]');
