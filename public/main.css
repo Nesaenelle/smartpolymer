@@ -340,7 +340,8 @@ main {
   background: url(../img/bg-1.jpg);
   background-size: cover;
   background-position: center;
-  height: calc(100vh - 100px); }
+  height: calc(100vh - 100px);
+  position: relative; }
   @media (max-width: 1280px) {
     .top-block {
       height: calc(100vh - 90px); } }
