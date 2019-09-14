@@ -75,6 +75,11 @@ function resetValidaty(el) {
             $menuBtn.removeClass('opened');
             // $nav.removeClass('opened');
         }
+
+        if(e.target.localName === 'a' && $(e.target).closest('.dropdown-menu').length) {
+            $menu.removeClass('opened');
+            $menuBtn.removeClass('opened');
+        }
     }, false);
 })();
 

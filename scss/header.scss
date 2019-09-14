@@ -198,14 +198,15 @@ header {
 
             width: 320px;
             display: block;
-            margin: 0 auto 20px;
+            margin: 0 auto 35px;
             align-self: flex-end;
         }
 
         nav {
             width: 100%;
             padding: 0;
-            height: 70%;
+            height: 60%;
+            min-height: 40%;
 
             @media screen and (max-width: 1200px) {
                 display: block;

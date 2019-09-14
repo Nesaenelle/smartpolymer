@@ -167,12 +167,13 @@ header {
     header .dropdown-menu .btn {
       width: 320px;
       display: block;
-      margin: 0 auto 20px;
+      margin: 0 auto 35px;
       align-self: flex-end; }
     header .dropdown-menu nav {
       width: 100%;
       padding: 0;
-      height: 70%; }
+      height: 60%;
+      min-height: 40%; }
       @media screen and (max-width: 1200px) {
         header .dropdown-menu nav {
           display: block; } }
@@ -287,7 +288,8 @@ main {
   @media (max-width: 768px) {
     .go-btn {
       height: 50px;
-      width: 50px; } }
+      width: 50px;
+      bottom: -25px; } }
   @media (max-width: 480px) {
     .go-btn {
       left: 0;
@@ -328,7 +330,8 @@ main {
     transform: rotate(-180deg); }
     @media (max-width: 768px) {
       .go-btn.go-btn-back {
-        bottom: 20px; } }
+        bottom: 20px;
+        right: 20px; } }
     .go-btn.go-btn-back.active {
       opacity: 1;
       visibility: visible; }
