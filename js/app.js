@@ -6,13 +6,19 @@ $('.form').on('submit', (e) => {
     if (e.target.checkValidity()) {
         // var modalId = $(e.target).data('modal-id');
         e.target.reset();
-
-        // openModal(modalId);
-        e.target.classList.add('submitted');
-        e.target.querySelector('.btn').innerText = 'ОТПРАВЛЕНО';
         controls.forEach(c => {
             resetValidaty(c);
         });
+
+        if(e.target.id === 'modal-form') {
+            closeModal();
+        }
+
+        if(e.target.id === 'form') {
+            e.target.classList.add('submitted');
+            e.target.querySelector('.btn').innerText = 'ОТПРАВЛЕНО';
+        }
+
     } else {
         var targetInput = controls.filter(r => !r.classList.contains('success') || r.classList.contains('error'))[0];
         if (targetInput) {
@@ -24,18 +30,10 @@ $('.form').on('submit', (e) => {
 });
 
 $('.form').on('input', function(e) {
-    // checkValidity(e.target);
     var controls = [...$(e.target).closest('form')[0].elements].filter(r => r.localName === 'input');
     controls.forEach(c => {
         checkValidity(c);
     });
-    // var targetInput = controls.filter(r=> !r.classList.contains('success') || r.classList.contains('error'))[0];
-
-    // if(targetInput) {
-    //     $('.payment__step').eq(1).removeClass('active');
-    // } else {
-    //     $('.payment__step').eq(1).addClass('active');
-    // }
 });
 
 function checkValidity(el) {
@@ -51,7 +49,6 @@ function checkValidity(el) {
 function resetValidaty(el) {
     $(el).removeClass('success');
     $(el).removeClass('error');
-    // $('.payment__step').eq(1).removeClass('active');
 }
 
 
@@ -59,13 +56,11 @@ function resetValidaty(el) {
 (function() {
     var $menuBtn = $('[data-menu-btn]');
     var $menu = $('[data-menu]');
-    // var $nav = $('header nav');
 
     $menuBtn.on('click', function(e) {
         e.stopPropagation();
         $menuBtn.toggleClass('opened');
         $menu.toggleClass('opened');
-        // $nav.toggleClass('opened');
     })
 
 
@@ -73,7 +68,6 @@ function resetValidaty(el) {
         if (!$menu[0].contains(e.target)) {
             $menu.removeClass('opened');
             $menuBtn.removeClass('opened');
-            // $nav.removeClass('opened');
         }
 
         if(e.target.localName === 'a' && $(e.target).closest('.dropdown-menu').length) {
@@ -85,9 +79,7 @@ function resetValidaty(el) {
 
 
 $('.go-btn-down').on('click', function() {
-    // var body = $("html, body");
     $('header a[href="#products"]').click();
-    // body.stop().animate({ scrollTop: window.innerHeight + $('header').height() }, 500);
 });
 
 $('.go-btn-back').on('click', function() {
@@ -150,3 +142,47 @@ $('a[href*="#"]').on('click', function(e) {
 });
 
 
+// (function() {
+    function closeModal() {
+        var overlay = $('.modal-overlay');
+        $('.modal').removeClass('opened');
+        overlay.removeClass('opened');
+    }
+
+    function openModal(e) {
+        if(e.target) {
+            var $target = $(e.currentTarget);
+            var id = $target.data('modal');
+        } else {
+            var id = e;
+        }
+
+        var modal = $('[data-modal-id="'+id+'"]');
+        var overlay = $('.modal-overlay');
+
+        modal.addClass('opened');
+        overlay.addClass('opened');
+    }
+
+    $('[data-close-btn]').on('click', function () {
+        closeModal();
+    });
+
+    $('.modal-close').on('click', function () {
+        closeModal();
+    });
+
+    $('.modal-overlay').on('click', function () {
+        closeModal();
+    });
+
+    $('[data-modal]').on('click', function (e) {
+        openModal(e);
+    });
+
+    // $('#modal-form').on('submit', function(e) {
+    //     e.preventDefault();
+    //     closeModal();
+    // });
+
+// })();

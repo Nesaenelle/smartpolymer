@@ -1,0 +1,109 @@
+.modal {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+
+    transition: 0.2s;
+    opacity: 0;
+    visibility: hidden;
+    
+
+    &.opened {
+        opacity: 1;
+        visibility: visible;
+
+        .modal-body {
+
+        }
+    }
+
+    &-close {
+        position: absolute;
+        right: 17px;
+        top: 15px;
+        font-size: 19px;
+        cursor: pointer;
+        width: 15px;
+        height: 15px;
+        background: url(../img/close-black.svg);
+        background-size: cover;
+    }
+
+    &-overlay {
+        transition: 0.2s;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.9);
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+
+        &.opened {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    &.opened {
+        .modal-body {
+            display: block;
+        }
+    }
+
+    &-body {
+        position: relative;
+        z-index: 999;
+        border-radius: 4px;
+        background-color: #fafafa;
+        box-shadow: 0 0 32px -22px #000;
+        padding: 20px 60px;
+        width: 600px;
+        @media (max-width: 768px) {
+           padding: 20px 30px;
+        }
+    }
+
+    .form {
+        margin-top: 20px;
+        flex-wrap: wrap;
+        width: 100%;
+        .btn--orange {
+            margin: 20px auto;
+            display: block;
+            width: 308px;
+             @media (max-width: 375px) {
+                width: 100%;
+             }
+        }
+        .input {
+            input {
+                background-color: #fafafa;
+            }
+        }
+    }
+
+    &-title {
+        width: 100%;
+        font-family: GothamPro;
+        font-size: 32px;
+        font-weight: 500;
+        line-height: 1.19;
+        color: #303133;
+        font-weight: 600;
+        margin-bottom: 30px;
+        @media (max-width: 768px) {
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+    }
+
+}
