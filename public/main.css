@@ -254,14 +254,20 @@ header {
     flex-wrap: wrap;
     width: 100%; }
     .modal .form .btn--orange {
-      margin: 20px auto;
+      margin: 15px auto 20px;
       display: block;
       width: 308px; }
       @media (max-width: 375px) {
         .modal .form .btn--orange {
           width: 100%; } }
-    .modal .form .input input {
-      background-color: #fafafa; }
+    .modal .form .input {
+      margin-bottom: 15px; }
+      .modal .form .input input {
+        background-color: #fafafa; }
+  .modal small {
+    text-align: center;
+    display: block;
+    width: 100%; }
   .modal-title {
     width: 100%;
     font-family: GothamPro;
@@ -270,7 +276,7 @@ header {
     line-height: 1.19;
     color: #303133;
     font-weight: 600;
-    margin-bottom: 30px; }
+    margin-bottom: 25px; }
     @media (max-width: 768px) {
       .modal-title {
         font-size: 26px;
