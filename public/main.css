@@ -50,29 +50,80 @@ header {
       @media (max-width: 480px) {
         header .logo img {
           width: 100px; } }
-  @media (max-width: 768px) {
-    header nav {
-      display: none; } }
-  header nav ul {
-    display: flex; }
-    header nav ul li a {
-      padding: 29px 41px;
-      display: block;
-      color: #000;
-      font-size: 15px;
-      font-weight: 700;
-      letter-spacing: 0.7px;
-      text-transform: uppercase; }
-      header nav ul li a.active {
-        color: #ff6429; }
-      @media (max-width: 1280px) {
-        header nav ul li a {
-          font-size: 12px;
-          padding: 29px 20px; } }
+  header .language {
+    position: relative; }
+    @media (max-width: 768px) {
+      header .language {
+        margin-left: auto; } }
+    header .language__value {
+      background: #ff6429;
+      border-radius: 100%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      cursor: pointer;
+      position: relative;
+      z-index: 1; }
+      @media (max-width: 768px) {
+        header .language__value {
+          width: 34px;
+          height: 34px;
+          font-size: 14px; } }
+    header .language__list {
+      opacity: 0;
+      visibility: hidden;
+      position: absolute;
+      top: calc(100% - 20px);
+      width: 100%;
+      background: #7a7a7c;
+      padding-top: 18px;
+      transition: 0.2s;
+      border-radius: 0 0 40px 40px; }
+      header .language__list.active {
+        opacity: 1;
+        visibility: visible; }
+      header .language__list__item {
+        z-index: 1;
+        position: relative;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        cursor: pointer; }
+        @media (max-width: 768px) {
+          header .language__list__item {
+            font-size: 14px; } }
+        header .language__list__item:hover {
+          text-decoration: underline; }
+  header nav {
+    margin-left: auto; }
+    @media (max-width: 768px) {
+      header nav {
+        display: none; } }
+    header nav ul {
+      display: flex; }
+      header nav ul li a {
+        padding: 29px 41px;
+        display: block;
+        color: #000;
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: 0.7px;
+        text-transform: uppercase; }
+        header nav ul li a.active {
+          color: #ff6429; }
+        @media (max-width: 1280px) {
+          header nav ul li a {
+            font-size: 12px;
+            padding: 29px 20px; } }
   header .burger {
     display: none;
     width: 28px;
-    height: 20px;
+    height: 24px;
     position: static;
     z-index: 10;
     -webkit-transition: all .2s linear;

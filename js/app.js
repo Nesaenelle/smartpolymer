@@ -52,8 +52,8 @@ function resetValidaty(el) {
 }
 
 
-;
-(function() {
+// ;
+// (function() {
     var $menuBtn = $('[data-menu-btn]');
     var $menu = $('[data-menu]');
 
@@ -74,8 +74,12 @@ function resetValidaty(el) {
             $menu.removeClass('opened');
             $menuBtn.removeClass('opened');
         }
+
+        if(!$(e.target).closest('[data-language]').length) {
+            $('[data-language-list]').removeClass('active');
+        }
     }, false);
-})();
+// })();
 
 
 $('.go-btn-down').on('click', function() {
@@ -142,47 +146,58 @@ $('a[href*="#"]').on('click', function(e) {
 });
 
 
-// (function() {
-    function closeModal() {
-        var overlay = $('.modal-overlay');
-        $('.modal').removeClass('opened');
-        overlay.removeClass('opened');
+
+function closeModal() {
+    var overlay = $('.modal-overlay');
+    $('.modal').removeClass('opened');
+    overlay.removeClass('opened');
+}
+
+function openModal(e) {
+    if(e.target) {
+        var $target = $(e.currentTarget);
+        var id = $target.data('modal');
+    } else {
+        var id = e;
     }
 
-    function openModal(e) {
-        if(e.target) {
-            var $target = $(e.currentTarget);
-            var id = $target.data('modal');
-        } else {
-            var id = e;
-        }
+    var modal = $('[data-modal-id="'+id+'"]');
+    var overlay = $('.modal-overlay');
 
-        var modal = $('[data-modal-id="'+id+'"]');
-        var overlay = $('.modal-overlay');
+    modal.addClass('opened');
+    overlay.addClass('opened');
+}
 
-        modal.addClass('opened');
-        overlay.addClass('opened');
-    }
+$('[data-close-btn]').on('click', function () {
+    closeModal();
+});
 
-    $('[data-close-btn]').on('click', function () {
-        closeModal();
+$('.modal-close').on('click', function () {
+    closeModal();
+});
+
+$('.modal-overlay').on('click', function () {
+    closeModal();
+});
+
+$('[data-modal]').on('click', function (e) {
+    openModal(e);
+});
+
+
+$('[data-language]').each(function(i, item) {
+    var items = $(item).find('[data-language-item]');
+    var value =  $(item).find('[data-language-value]');
+
+    value.on('click', function() {
+        value.next().toggleClass('active')
     });
 
-    $('.modal-close').on('click', function () {
-        closeModal();
+    items.on('click', function() {
+        var prevVal = value.text();
+        var nextVal = $(this).text();
+        value.text(nextVal);
+        $(this).text(prevVal);
+        value.next().removeClass('active')
     });
-
-    $('.modal-overlay').on('click', function () {
-        closeModal();
-    });
-
-    $('[data-modal]').on('click', function (e) {
-        openModal(e);
-    });
-
-    // $('#modal-form').on('submit', function(e) {
-    //     e.preventDefault();
-    //     closeModal();
-    // });
-
-// })();
+})

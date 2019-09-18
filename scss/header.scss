@@ -43,7 +43,65 @@ header {
         width: 100%;
     }
 
+    .language {
+        @media (max-width: 768px) {
+            margin-left: auto;
+        }
+        position: relative;
+        &__value {
+            background: #ff6429;
+            border-radius: 100%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+            @media (max-width: 768px) {
+                width: 34px;
+                height: 34px;
+                font-size: 14px;
+            }
+        }
+        &__list {
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            top: calc(100% - 20px);
+            width: 100%;
+            background: #7a7a7c;
+            padding-top: 18px;
+            transition: 0.2s;
+            border-radius: 0 0 40px 40px;
+            &.active {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            &__item {
+                z-index: 1;
+                position: relative;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #fff;
+                cursor: pointer;
+                @media (max-width: 768px) {
+                    font-size: 14px;
+                }
+                &:hover {
+                    text-decoration: underline;;
+                }
+            }
+        }
+    }
+
     nav {
+        margin-left: auto;
         @media (max-width: 768px) {
             display: none;
         }
@@ -77,7 +135,7 @@ header {
 
         display: none;
         width: 28px;
-        height: 20px;
+        height: 24px;
         position: static;
         z-index: 10;
         -webkit-transition: all .2s linear;
